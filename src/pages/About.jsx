@@ -1,3 +1,4 @@
+// src/pages/About.js
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Location from '../components/Location';
@@ -35,12 +36,12 @@ const About = () => {
   }, []);
 
   return (
-    <>
+    <div data-scroll-section>
       <div className="h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat">
-        <h1 id="firstHeading" ref={headingRef} className="text-3xl flex gap-2 text-white">
+        <h1 ref={headingRef} className="text-3xl flex gap-2 text-white">
           Our Institute
         </h1>
-        <h2 id="secondHeading" ref={subheadingRef} className="text-4xl mt-8 text-white">
+        <h2 ref={subheadingRef} className="text-4xl mt-8 text-white">
           Stock Market Trading
         </h2>
       </div>
@@ -59,10 +60,8 @@ const About = () => {
         </div>
       </div>
       <Location />
-      <div className='min-h-[23vh]'>
       <Footer />
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* src/App.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensure no overflow from body */
+  }
+  
+  #main-container {
+    overflow: hidden;
+  }
+  
+  /* Ensure individual sections do not add extra scrollbars */
+  [data-scroll-container] {
+    overflow: hidden;
+  }
+  
+  [data-scroll-section] {
+    overflow: hidden;
+  }
+  
+  /* Additional styles as needed */
+  
