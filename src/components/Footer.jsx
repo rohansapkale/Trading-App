@@ -1,23 +1,22 @@
 import React from 'react';
 
-
 function Footer() {
   return (
-    <footer className="bg-black text-white min-h-[20vw]">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer className="bg-black text-white py-6">
+      <div className="mx-auto w-full max-w-screen-xl px-4">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="#" className="flex items-center">
-              <span style={{ fontWeight: '800' }}>
+              <span className="font-bold text-lg">
                 LOGO
               </span>
             </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-white">Resources</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
+              <h2 className="mb-4 text-sm font-semibold text-gray-500 uppercase">Resources</h2>
+              <ul className="text-gray-400">
+                <li className="mb-2">
                   <a href="#">Flowbite</a>
                 </li>
                 <li>
@@ -26,9 +25,9 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-white">Follow us</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
+              <h2 className="mb-4 text-sm font-semibold text-gray-500 uppercase">Follow us</h2>
+              <ul className="text-gray-400">
+                <li className="mb-2">
                   <a href="#" className="hover:underline">Github</a>
                 </li>
                 <li>
@@ -37,9 +36,9 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-white">Legal</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
+              <h2 className="mb-4 text-sm font-semibold text-gray-500 uppercase">Legal</h2>
+              <ul className="text-gray-400">
+                <li className="mb-2">
                   <a href="#">Privacy Policy</a>
                 </li>
                 <li>

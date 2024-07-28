@@ -59,7 +59,9 @@ const About = () => {
         </div>
       </div>
       <Location />
+      <div className='min-h-[23vh]'>
       <Footer />
+      </div>
     </>
   );
 };

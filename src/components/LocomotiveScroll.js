@@ -1,26 +1,36 @@
 // src/components/LocomotiveScroll.js
 import React, { useEffect } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/src/locomotive-scroll.scss'; // Import Locomotive Scroll styles
+import 'locomotive-scroll/src/locomotive-scroll.scss';
+import { useLocation } from 'react-router-dom';
 
 const LocomotiveScrollComponent = () => {
-  useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector('#main-container'), // This should be the container with smooth scroll
-      smooth: true,
-      smartphone: {
-        smooth: true,
-      },
-      tablet: {
-        smooth: true,
-      },
-    });
+  const location = useLocation();
 
-    // Clean up on component unmount
-    return () => {
-      if (scroll) scroll.destroy();
+  useEffect(() => {
+    const initScroll = () => {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main-container'),
+        smooth: true,
+        smartphone: {
+          smooth: true,
+        },
+        tablet: {
+          smooth: true,
+        },
+      });
+
+      scroll.update();
+
+      return () => {
+        if (scroll) scroll.destroy();
+      };
     };
-  }, []);
+
+    const timeoutId = setTimeout(initScroll, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, [location]);
 
   return null;
 };
