@@ -68,7 +68,7 @@ const Home = () => {
         </h2>
       </div>
       <div className="text-center py-8 bg-gray-100">
-        <h3 className="text-6xl font-semibold text-neutral-800 dark:text-neutral-50">
+        <h3 className="text-6xl text-zinc-800 font-semibold text-neutral-800 dark:text-zinc-800 ">
           Our <br /> Services
         </h3>
       </div>
@@ -105,7 +105,7 @@ const Home = () => {
           <div className="max-w-xs w-full bg-white  align-center justify-center">
             <div className="p-5 m-12">
               <a href="#">
-                <h5 className="mb-2 text-5xl font-bold align-center justify-center tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-5xl font-bold align-center justify-center tracking-tight text-gray-900 dark:text-gray-900">
                   Why <br /> Learn with Us ?
                 </h5>
               </a>
