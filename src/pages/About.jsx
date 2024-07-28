@@ -58,10 +58,10 @@ const About = () => {
           />
         </div>
       </div>
-      <Location />
-   
-        <Footer />
-   
+      <Location />   
+      <div>
+      <Footer />
+      </div>   
     </div>
   );
 };
