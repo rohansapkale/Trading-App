@@ -1,0 +1,6 @@
+.bg-hero {
+    background-image: url('../assets/IMG-20240724-WA0021.jpg'); /* Update this path to your actual image */
+    background-size: cover;
+    background-position: center;
+  }
+  

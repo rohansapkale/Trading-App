@@ -1,0 +1,202 @@
+/* Basic CSS for Navbar component */
+
+#wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggle {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.line {
+  fill: none;
+  transition-delay: 400ms, 0;
+  transition-property: stroke, stroke-dasharray, stroke-dashoffset;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+  stroke: #fff; /* Make the lines white */
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.line.top {
+  stroke-dasharray: 40 139;
+}
+
+.line.bottom {
+  stroke-dasharray: 20 180;
+  stroke-dashoffset: -20px;
+}
+
+.navbar-toggle.active {
+  transform: rotate(45deg);
+}
+
+.navbar-toggle.active .line {
+  stroke: #fff; /* Make the lines white when active */
+}
+
+.navbar-toggle.active .line.top {
+  stroke-dashoffset: -98px;
+}
+
+.navbar-toggle.active .line.bottom {
+  stroke-dashoffset: -138px;
+}
+
+.navbar-toggle:not(.active):hover .line.bottom {
+  stroke-dasharray: 40 180;
+  stroke-dashoffset: 0px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.973); /* Semi-transparent background */
+}
+
+.navbar ul {
+  width: 100%;
+  max-width: 300px; /* Reduced max-width for smaller screens */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  opacity: 0;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px; /* Adjusted font size */
+  display: block;
+  text-align: left;
+  padding: 15px 0; /* Adjusted padding */
+  font-weight: bold;
+  letter-spacing: 1.5px; /* Adjusted letter spacing */
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease 500ms;
+  position: relative;
+}
+
+.navbar ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px; /* Adjusted font size */
+  opacity: 0;
+  transition: opacity ease 500ms;
+}
+
+.navbar ul li a:hover {
+  letter-spacing: 2px;
+}
+
+.navbar ul li a:hover::before {
+  opacity: 0.2;
+}
+
+#bg-circle {
+  transform: scale(0);
+  width: 60px; /* Reduced width for smaller screens */
+  height: 60px; /* Reduced height for smaller screens */
+  background: #000000;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+  .navbar ul li a {
+    font-size: 18px; /* Slightly smaller font size for tablets */
+  }
+
+  .navbar ul li a::before {
+    font-size: 20px; /* Adjusted font size for tablets */
+    padding: 28px ;
+  }
+  .navbar ul li a {
+    font-size: 18px; /* Smaller font size for mobile */
+    padding: 28px 140px; /* Adjusted padding */
+    letter-spacing: 1px; /* Adjusted letter spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    max-width: 90%; /* Increase width for smaller screens */
+  }
+
+  .navbar ul li a {
+    font-size: 16px; /* Smaller font size for mobile */
+    padding: 28px 140px; /* Adjusted padding */
+    letter-spacing: 1px; /* Adjusted letter spacing */
+  }
+
+  .navbar ul li a::before {
+    font-size: 20px; /* Adjusted font size for tablets */
+    padding: 28px 22px;
+  }
+
+  #bg-circle {
+    width: 50px; /* Further reduced width */
+    height: 50px; /* Further reduced height */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar ul {
+    max-width: 100%; /* Full width for very small screens */
+  }
+
+  .navbar ul li a {
+    font-size: 14px; /* Even smaller font size */
+    padding: 28px 140px; /* Adjusted padding */
+  }
+
+  .navbar ul li a::before {
+    font-size: 25px; /* Even smaller font size */
+  }
+
+  #menu-btn {
+    height: 12vw;
+  }
+
+  #bg-circle {
+    width: 40px; /* Even further reduced width */
+    height: 40px; /* Even further reduced height */
+  }
+}

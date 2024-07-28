@@ -1,0 +1,109 @@
+/* Custom utility class for background image */
+.bg-hero {
+  position: relative;
+  background-image: url('../assets/IMG-20240724-WA0022.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.bg-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity here (0.5 for 50% opacity) */
+  z-index: 0;
+}
+
+/* Adjust content to be above the background overlay */
+.bg-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* General styling for the page */
+#main-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+#secondHeading {
+  font-weight: 800;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #secondHeading  {
+    font-size: 30px;
+  }
+  #firstHeading {
+    font-size: 15px;
+    margin-top: -5px;
+  }
+}
+
+/* General styles */
+.course-column {
+  position: relative;
+  background-color: #000000;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 165, 0, 0.7), 0 0 30px rgba(0, 0, 128, 0.7), 0 0 30px rgba(0, 0, 255, 0.7);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.course-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.3), rgba(0, 0, 128, 0.3), rgba(0, 0, 255, 0.3));
+  filter: blur(30px);
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
+}
+
+.course-column:hover {
+  box-shadow: 0 0 50px rgba(255, 165, 0, 1), 0 0 50px rgba(0, 0, 128, 1), 0 0 50px rgba(0, 0, 255, 1);
+  transform: scale(1.05);
+}
+
+.course-column:hover::before {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #courses {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .course-column {
+    padding: 1.5rem;
+  }
+
+  .course-column h3 {
+    font-size: 1.5rem;
+  }
+
+  .course-column ul {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+}
