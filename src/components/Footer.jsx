@@ -1,9 +1,9 @@
 import React from 'react';
-import './Footer.css';
+
 
 function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white min-h-[20vw]">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
