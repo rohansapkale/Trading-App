@@ -38,10 +38,10 @@ const Home = () => {
   return (
     <div data-scroll-section>
       <div className="h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat">
-        <h1 ref={headingRef} className="text-3xl flex gap-2 text-white">
+        <h1  ref={headingRef} className="text-3xl flex gap-2 text-white">
           Top Rated Institute For
         </h1>
-        <h2 ref={subheadingRef} className="text-4xl mt-8 text-white">
+        <h2  ref={subheadingRef} className="text-4xl mt-8 text-white">
           Stock Market Trading
         </h2>
       </div>

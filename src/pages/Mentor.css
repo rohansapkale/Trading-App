@@ -1,0 +1,17 @@
+/* src/pages/Mentor.css */
+.mentor-section {
+    max-width: 900px;
+  }
+  
+  .mentor-image img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mentor-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  .social-links i {
+    transition: color 0.3s ease-in-out;
+  }
+  

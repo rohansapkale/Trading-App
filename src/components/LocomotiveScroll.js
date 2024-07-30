@@ -1,33 +1,48 @@
 // src/components/LocomotiveScroll.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/src/locomotive-scroll.scss'; // Import Locomotive Scroll styles
 import { useLocation } from 'react-router-dom';
 
 const LocomotiveScrollComponent = () => {
   const location = useLocation();
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const scrollEl = document.querySelector('#main-container');
     if (!scrollEl) return;
 
-    const scroll = new LocomotiveScroll({
-      el: scrollEl,
-      smooth: true,
-      smartphone: {
+    const initializeScroll = () => {
+      scrollRef.current = new LocomotiveScroll({
+        el: scrollEl,
         smooth: true,
-      },
-      tablet: {
-        smooth: true,
-      },
-    });
+        smartphone: {
+          smooth: true,
+        },
+        tablet: {
+          smooth: true,
+        },
+      });
+    };
 
-    // Update Locomotive Scroll on route change
-    scroll.update();
+    initializeScroll();
+
+    // Update Locomotive Scroll on route change after a short delay
+    const handleRouteChange = () => {
+      setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current.update();
+        }
+      }, 300); // Adjust delay as needed
+    };
+
+    handleRouteChange();
 
     // Clean up on component unmount
     return () => {
-      if (scroll) scroll.destroy();
+      if (scrollRef.current) {
+        scrollRef.current.destroy();
+      }
     };
   }, [location]);
 
