@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImage from '../assets/logo.png'; // Adjust the path to your logo image
 
 function Footer() {
   return (
@@ -7,9 +8,7 @@ function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="#" className="flex items-center">
-              <span className="font-bold text-lg">
-                LOGO
-              </span>
+              <img src={logoImage} alt="Logo" className="h-[20vh] w-full" /> {/* Adjust the height and width as needed */}
             </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
