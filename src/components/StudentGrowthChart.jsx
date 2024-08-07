@@ -107,7 +107,7 @@ const StudentGrowthChart = () => {
   };
 
   return (
-    <div className="h-screen w-[60vw] mx-1/2 mt-3 bg-black p-8">
+    <div className="w-full max-w-3xl mx-auto mt-3 bg-black p-8 aspect-w-16 aspect-h-9">
       <Line data={data} options={options} />
     </div>
   );

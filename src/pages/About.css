@@ -1,6 +1,6 @@
 .bg-hero {
   position: relative;
-  background-image: url('../assets/IMG-20240724-WA0021.jpg'); /* Replace with your image path */
+  background-image: url('../assets/IMG-20240724-WA0022.jpg'); /* Replace with your image path */
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,3 +26,14 @@
   top: -150px; /* Adjust this value to your needs */
   z-index: 2; /* Higher z-index */
 }
+/* About.css */
+
+[data-scroll-container] {
+  overflow: hidden;
+}
+
+[data-scroll-section] {
+  position: relative;
+  overflow: hidden;
+}
+

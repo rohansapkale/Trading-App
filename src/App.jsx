@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <LocomotiveScrollComponent />
-      <div id="main-container" data-scroll-container>
+      <div id="main-container"  data-scroll-container>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
