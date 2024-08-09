@@ -2,12 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Location from '../components/Location';
 import Footer from '../components/Footer';
-import LearnCard from '../components/LearnCard';
+import LearnCard from '../components/LearnCard'
 import StudentGrowthChart from '../components/StudentGrowthChart';
 import Testimonial from '../components/Testimonial';
 import LocomotiveScroll from '../components/LocomotiveScroll';
-import './About.css';
-
+import './About.css'
 const About = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -51,17 +50,17 @@ const About = () => {
 
   return (
     <div data-scroll-section>
-      <div className="h-[120vh] bg-gray-100 w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat">
-        <h1 ref={headingRef} className="text-3xl flex gap-2 text-white">
+      <div className="h-screen bg-gray-100 w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat relative">
+        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-center text-white">
           Top Rated Institute For
         </h1>
-        <h2 ref={subheadingRef} className="text-4xl mt-8 text-white">
+        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white">
           Stock Market Trading
         </h2>
       </div>
-      <div className="bg-gray-100 p-2">
+      <div className="relative z-5  translate-y-[-100px] md:translate-[120px] p-4">
         <div ref={cardsRef} className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <LearnCard
               src="https://sithcomputers.com/wp-content/uploads/2023/03/Data-Science.gif"
               desc="Once you are with us, we will be with you. Be a part of our thriving stock market learning private community"
@@ -75,11 +74,13 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#000000]">
+      <div className='mt-10 md:mt-13'>
+        <h3 className='text-2xl md:text-3xl text-center font-semibold mb-2'>Student Growth</h3>
         <StudentGrowthChart />
       </div>
-      <Testimonial />
-      <Testimonial />
+      <div className='mt-10 md:mt-16'>
+        <Testimonial />
+      </div>
       <Location />
       <Footer />
     </div>

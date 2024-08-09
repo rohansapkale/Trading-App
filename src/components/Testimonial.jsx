@@ -57,7 +57,7 @@ const Testimonial = () => (
   <div className="testimonial-container">
     <div className="animate-marquee">
       {testimonials.concat(testimonials).map((testimonial, index) => (
-        <div key={index} className="flex-shrink-0 w-80 bg-white p-6 rounded-lg shadow-md">
+        <div key={index} className="flex-shrink-0 w-80 m-4 bg-white p-6 rounded-lg shadow-md ">
           <article>
             <p className="text-gray-700 mb-4">{testimonial.text}</p>
             <footer className="flex items-center justify-between">

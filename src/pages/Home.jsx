@@ -1,15 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import axios from 'axios'; // Import axios for API calls
 import Footer from '../components/Footer';
 import CourseCard from '../components/CourseCard';
 import LearnCard from '../components/LearnCard';
 import personalTrainingImage from '../assets/personal_training.jpg';
 import liveEducationImage from '../assets/live_education.jpg';
-import './Home.css';
-
+import Courses from '../components/Courses';
+import './Home.css'
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
+  const [studentCount, setStudentCount] = useState(800);
+  const [niftyValue, setNiftyValue] = useState(null);
+  const [sensexValue, setSensexValue] = useState(null);
 
   useEffect(() => {
     // GSAP animations
@@ -36,17 +40,66 @@ const Home = () => {
     );
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStudentCount(prevCount => prevCount + 1);
+    },   5000); // 5 minutes in milliseconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
+  useEffect(() => {
+    const fetchMarketData = async () => {
+      try {
+        const responseNifty = await axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NSE:NIFTY&interval=1min&apikey=YOUR_API_KEY`);
+        const responseSensex = await axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=BSE:SENSEX&interval=1min&apikey=YOUR_API_KEY`);
+        
+        // Extract the latest closing values
+        const niftyData = responseNifty.data['Time Series (1min)'];
+        const sensexData = responseSensex.data['Time Series (1min)'];
+        
+        const latestNifty = Object.values(niftyData)[0]['4. close'];
+        const latestSensex = Object.values(sensexData)[0]['4. close'];
+        
+        setNiftyValue(latestNifty);
+        setSensexValue(latestSensex);
+      } catch (error) {
+        console.error("Error fetching market data:", error);
+      }
+    };
+
+    fetchMarketData(); // Fetch market data on component mount
+
+    // Optional: Set up polling to refresh market data periodically
+    const interval = setInterval(() => {
+      fetchMarketData();
+    }, 5 * 60 * 1000); // Refresh every 5 minutes
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <div data-scroll-section>
-      <div className="h-[120vh] bg-gray-100 w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat">
+      <div className="h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat">
         <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl flex gap-2 text-white text-center">
           Top Rated Institute For
         </h1>
         <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white text-center">
           Stock Market Trading
         </h2>
+        <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center">
+          Students Enrolled: {studentCount}
+        </h3>
+        <div className="mt-8 flex gap-4">
+          <button className="bg-blue-500 text-white py-2 px-4 rounded">
+            Nifty: {niftyValue ? niftyValue : '-'}
+          </button>
+          <button className="bg-green-500 text-white py-2 px-4 rounded">
+            Sensex: {sensexValue ? sensexValue : '-'}
+          </button>
+        </div>
       </div>
-      <div className="bg-gray-100 p-4">
+      <div className="p-4">
         <div className="cards-container flex flex-wrap justify-center gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
             <CourseCard
@@ -70,7 +123,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-wrap justify-center gap-4 p-4 bg-white">
         <div className="flex flex-col items-center max-w-md w-full bg-white text-center">
           <div className="p-5 m-4">
@@ -99,6 +151,9 @@ const Home = () => {
           desc="Powered by a learning execution system for you to implement stock market investment and trading strategies alongside"
           head="Not just learn, IMPLEMENT IT"
         />
+      </div>
+      <div className="p-4">
+        <Courses />
       </div>
       <Footer />
     </div>

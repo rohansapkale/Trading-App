@@ -15,6 +15,16 @@ const StudentGrowthChart = () => {
         backgroundColor: 'rgba(255, 165, 0, 0.5)', // light orange
         borderColor: 'rgba(255, 165, 0, 1)', // orange
         fill: true,
+        borderWidth: 3,
+        pointBackgroundColor: 'rgba(255, 165, 0, 1)', // orange points
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        shadowOffsetX: 3,
+        shadowOffsetY: 3,
+        shadowBlur: 10,
+        shadowColor: 'rgba(0, 0, 0, 0.5)',
       },
       {
         label: 'Our Students',
@@ -22,6 +32,16 @@ const StudentGrowthChart = () => {
         backgroundColor: 'rgba(0, 128, 0, 0.5)', // light green
         borderColor: 'rgba(0, 128, 0, 1)', // green
         fill: true,
+        borderWidth: 3,
+        pointBackgroundColor: 'rgba(0, 128, 0, 1)', // green points
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        shadowOffsetX: 3,
+        shadowOffsetY: 3,
+        shadowBlur: 10,
+        shadowColor: 'rgba(0, 0, 0, 0.5)',
       },
     ],
   };
@@ -41,20 +61,20 @@ const StudentGrowthChart = () => {
         title: {
           display: true,
           text: 'Months',
-          color: '#ffffff', // white text color
+          color: '#000000', // black text color
         },
         ticks: {
-          color: '#ffffff', // white tick color
+          color: '#000000', // black tick color
         },
       },
       y: {
         title: {
           display: true,
           text: 'Number of Students',
-          color: '#ffffff', // white text color
+          color: '#000000', // black text color
         },
         ticks: {
-          color: '#ffffff', // white tick color
+          color: '#000000', // black tick color
         },
       },
     },
@@ -62,7 +82,14 @@ const StudentGrowthChart = () => {
       title: {
         display: true,
         text: 'Students Growth',
-        color: '#ffffff', // white title color
+        color: '#000000', // black title color
+        font: {
+          size: 20,
+        },
+        padding: {
+          top: 10,
+          bottom: 30,
+        },
       },
       tooltip: {
         callbacks: {
@@ -90,7 +117,7 @@ const StudentGrowthChart = () => {
               content: 'Significant Event',
               enabled: true,
               position: 'top',
-              color: '#ffffff', // white label color
+              color: '#000000', // black label color
             }
           }
         }
@@ -107,7 +134,7 @@ const StudentGrowthChart = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-3 bg-black p-8 aspect-w-16 aspect-h-9">
+    <div className="w-full max-w-3xl mx-auto mt-3 text-zinc-800 p-8 aspect-w-16 aspect-h-9 shadow-lg rounded-lg bg-white">
       <Line data={data} options={options} />
     </div>
   );
