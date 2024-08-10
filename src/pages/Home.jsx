@@ -7,8 +7,10 @@ import LearnCard from '../components/LearnCard';
 import personalTrainingImage from '../assets/personal_training.jpg';
 import liveEducationImage from '../assets/live_education.jpg';
 import Courses from '../components/Courses';
+
 import './Home.css'
 const Home = () => {
+
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
   const [studentCount, setStudentCount] = useState(800);
