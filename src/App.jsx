@@ -6,12 +6,13 @@ import Home from './pages/Home'; // Import your Home page component
 import About from './pages/About'; // Import your About page component
 import Mentor from './pages/Mentor'; // Import your Contact page component
 import LocomotiveScrollComponent from './components/LocomotiveScroll'; // Import LocomotiveScroll component
-
+import LogoHighlight from './components/LogoHighlight'
 const App = () => {
   return (
     <Router>
       <LocomotiveScrollComponent />
       <div id="main-container"  data-scroll-container>
+        <LogoHighlight/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

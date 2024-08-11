@@ -1,0 +1,33 @@
+/* globals.css or your stylesheet */
+
+/* Floating effect */
+@keyframes floating {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Revolve effect */
+@keyframes revolve {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the animations */
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.hover\:animate-revolve:hover {
+  animation: revolve 1s linear infinite;
+}
