@@ -17,7 +17,7 @@ function NavList({ setOpenNav }) {
         as="li"
         variant="small"
         color="white"
-        className="p-5 font-medium"
+        className="p-5 sm:pl-[25vh] md:pl-0 font-medium"
       >
         <Link
           to="/"
@@ -31,7 +31,7 @@ function NavList({ setOpenNav }) {
         as="li"
         variant="small"
         color="white"
-        className="p-5 font-medium"
+        className="p-5 sm:pl-[25vh] md:pl-0 font-medium"
       >
         <Link
           to="/about"
@@ -45,7 +45,7 @@ function NavList({ setOpenNav }) {
         as="li"
         variant="small"
         color="white"
-        className="p-5 font-medium"
+        className="p-5 sm:pl-[25vh] md:pl-0 font-medium"
       >
         <Link
           to="/mentor"
@@ -75,9 +75,9 @@ export default function NavbarSimple() {
 
   return (
     <Navbar className="fixed top-0 left-0 w-full bg-opacity-[50vh] text-white px-6 py-3 z-50 border-b-0 shadow-none lg:bg-black lg:bg-opacity-60">
-      <div className="flex items-center justify-between relative">
+      <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img src={logoImage} alt="Logo" className="h-10 w-auto" /> {/* Adjust logo size */}
+          <img src={logoImage} alt="Logo" className="h-10 relative top-[5%] w-auto" /> {/* Adjust logo size */}
         </div>
         <div className="hidden lg:flex lg:ml-auto">
           {/* Pass setOpenNav as a prop */}
@@ -85,7 +85,7 @@ export default function NavbarSimple() {
         </div>
         <IconButton
           variant="text"
-          className="lg:hidden h-6 w-6 text-white focus:bg-gray-700 active:bg-gray-700"
+          className="lg:hidden h-8 w-8 transition-transform duration-300 ease-in-out text-white focus:bg-gray-700 active:bg-gray-700"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
