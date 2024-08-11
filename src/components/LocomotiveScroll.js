@@ -16,7 +16,7 @@ const LocomotiveScrollComponent = () => {
       scrollRef.current = new LocomotiveScroll({
         el: scrollEl,
         smooth: true,
-        lerp: .8, // Adjusts the smoothness
+        lerp: .1, // Adjusts the smoothness
         smartphone: {
           smooth: true,
         },
