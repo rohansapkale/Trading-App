@@ -74,10 +74,10 @@ export default function NavbarSimple() {
   }, []);
 
   return (
-    <Navbar className="fixed top-0 left-0 w-full bg-black bg-opacity-60 text-white px-6 py-3 z-50 border-none shadow-none">
+    <Navbar className="fixed top-0 left-0 w-full bg-opacity-[50vh] border-none text-white px-6 py-3 z-50 border-b-0 shadow-none lg:bg-black lg:bg-opacity-60">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img src={logoImage} alt="Logo" className="h-10 w-auto" /> {/* Adjust logo size */}
+          <img src={logoImage} alt="Logo" className="h-10 relative top-[5%] w-auto" /> {/* Adjust logo size */}
         </div>
         <div className="hidden lg:flex lg:ml-auto">
           {/* Pass setOpenNav as a prop */}
@@ -98,7 +98,7 @@ export default function NavbarSimple() {
       </div>
       <Collapse
         open={openNav}
-        className={`lg:hidden fixed top-0 right-0 h-screen w-full bg-black shadow-none transition-transform duration-300 ease-in-out ${openNav ? "translate-x-0" : "translate-x-full"} z-50`}
+        className={`lg:hidden fixed top-0 right-0 h-screen border-none w-full bg-black shadow-none transition-transform duration-300 ease-in-out ${openNav ? "translate-x-0" : "translate-x-full"} z-50`}
       >
         <div className="flex flex-col h-full p-4">
           <IconButton
