@@ -44,7 +44,8 @@ const CourseCard = ({ title, description, time, note, duration, fee, index }) =>
       initial={{ opacity: 0, x: direction }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-full"
+      whileHover={{ scale: 1.05, boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.2)' }}
+      className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-full transform transition-transform duration-300 hover:bg-gradient-to-r from-orange-400 to-blue-500 hover:text-white"
     >
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-700 mb-2">{description}</p>
@@ -58,9 +59,9 @@ const CourseCard = ({ title, description, time, note, duration, fee, index }) =>
 
 const Courses = () => {
   return (
-    <div className=" py-10">
+    <div className="py-10 bg-gradient-to-b from-gray-100 to-gray-200">
       <div className="container mx-auto">
-        <h2 className="text-3xl text-center font-bold mb-8">Our Courses</h2>
+        <h2 className="text-3xl text-center font-bold mb-8 text-gray-800">Our Courses</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {courses.map((course, index) => (
             <CourseCard key={index} {...course} index={index} />
