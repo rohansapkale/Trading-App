@@ -88,14 +88,14 @@ const Home = () => {
         <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center relative z-10">
           Students Enrolled: {studentCount}
         </h3>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 relative z-10">
+        {/* <div className="mt-8 flex flex-col sm:flex-row gap-4 relative z-10">
           <button className="bg-blue-500 text-white py-2 px-4 rounded">
             Nifty: {niftyValue ? niftyValue : '-'}
           </button>
           <button className="bg-green-500 text-white py-2 px-4 rounded">
             Sensex: {sensexValue ? sensexValue : '-'}
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="p-4 relative z-10">
         <div className="cards-container flex flex-wrap justify-center gap-4">

@@ -114,16 +114,16 @@ const Testimonial = () => (
                 </div>
                 <p className="text-sm font-medium text-gray-900">{testimonial.name}</p>
               </div>
-              <ul className="flex space-x-1">
+              
+            </footer>
+            <p className="text-gray-700 mb-4">{testimonial.text}</p>
+            <ul className="flex space-x-1">
                 {[...Array(testimonial.stars)].map((_, i) => (
                   <li key={i}>
                     <StarIcon />
                   </li>
                 ))}
               </ul>
-            </footer>
-            <p className="text-gray-700 mb-4">{testimonial.text}</p>
-           
           </article>
         </div>
       ))}

@@ -2,52 +2,60 @@
 
 /* Floating effect */
 @keyframes floating {
-    0% {
-      transform: translateY(-5px);
-    }
-    50% {
-      transform: translateY(5px);
-    }
-    100% {
-      transform: translateY(-5px);
-    }
+  0% {
+    transform: translateY(-5px);
   }
-  
-  /* Apply the animations */
-  .animate-floating {
-    animation: floating 3s ease-in-out infinite;
+  50% {
+    transform: translateY(5px);
   }
-  
-  /* Responsive adjustments for LogoImg */
-  @media (min-width: 640px) { /* sm */
-    #LogoImg {
-      top: -25%; /* Adjusted for small screens */
-      width: 75px; /* Scale proportionally */
-      height: 75px;
-    }
+  100% {
+    transform: translateY(-5px);
   }
-  
-  @media (min-width: 768px) { /* md */
-    #LogoImg {
-      top: -20%; /* Adjusted for medium screens */
-      width: 85px; /* Scale proportionally */
-      height: 85px;
-    }
+}
+
+/* Apply the animations */
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Default styles for #LogoImg */
+#LogoImg {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+
+}
+
+/* Responsive adjustments for LogoImg */
+@media (min-width: 340px) { /* sm */
+  #LogoImg {
+    top: -24%;
+    width: 125px; /* Scale proportionally */
+    height:125px;
   }
-  
-  @media (min-width: 1024px) { /* lg */
-    #LogoImg {
-      top: -15%; /* Adjusted for large screens */
-      width: 95px; /* Scale proportionally */
-      height: 95px;
-    }
+}
+
+@media (min-width: 768px) { /* md */
+  #LogoImg {
+    top: -20%;
+    width: 85px; /* Scale proportionally */
+    height: 85px;
   }
-  
-  @media (min-width: 1280px) { /* xl */
-    #LogoImg {
-      top: 0%; /* Adjusted for extra-large screens */
-      width: 100px; /* Actual size */
-      height: 100px;
-    }
+}
+
+@media (min-width: 1024px) { /* lg */
+  #LogoImg {
+    top: -15%;
+    width: 95px; /* Scale proportionally */
+    height: 95px;
   }
-  
+}
+
+@media (min-width: 1280px) { /* xl */
+  #LogoImg {
+    top: -35%;
+    left: 15%;
+    width: 120px; /* Actual size */
+    height: 140px;
+  }
+}
