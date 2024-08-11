@@ -13,45 +13,41 @@
     }
   }
   
-
   /* Apply the animations */
   .animate-floating {
     animation: floating 3s ease-in-out infinite;
   }
   
- 
-  
   /* Responsive adjustments for LogoImg */
   @media (min-width: 640px) { /* sm */
     #LogoImg {
-      top: -50%;
-      width: 6rem; /* Adjust for small screens */
-      height: 6rem;
+      top: -25%; /* Adjusted for small screens */
+      width: 75px; /* Scale proportionally */
+      height: 75px;
     }
   }
   
   @media (min-width: 768px) { /* md */
     #LogoImg {
-      top: -40%;
-      width: 8rem; /* Adjust for medium screens */
-      height: 8rem;
+      top: -20%; /* Adjusted for medium screens */
+      width: 85px; /* Scale proportionally */
+      height: 85px;
     }
   }
   
   @media (min-width: 1024px) { /* lg */
     #LogoImg {
-      top: -30%;
-      width: 10rem; /* Adjust for large screens */
-      height: 10rem;
+      top: -15%; /* Adjusted for large screens */
+      width: 95px; /* Scale proportionally */
+      height: 95px;
     }
   }
   
   @media (min-width: 1280px) { /* xl */
     #LogoImg {
-      top: -20%;
-      width: 15rem; /* Adjust for extra-large screens */
-      height: 8rem;
-      left: 5%;
+      top: 0%; /* Adjusted for extra-large screens */
+      width: 100px; /* Actual size */
+      height: 100px;
     }
   }
   
