@@ -7,7 +7,7 @@ import LearnCard from '../components/LearnCard';
 import personalTrainingImage from '../assets/personal_training.jpg';
 import liveEducationImage from '../assets/live_education.jpg';
 import Courses from '../components/Courses';
-import './Home.css';
+import './Home.css'; // Ensure this file includes any additional styles needed
 
 const Home = () => {
   const headingRef = useRef(null);
@@ -78,17 +78,17 @@ const Home = () => {
 
   return (
     <div data-scroll-section>
-      <div className="h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat">
-        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-white text-center">
+      <div className="relative h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat z-0">
+        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-white text-center relative z-10">
           Top Rated Institute For
         </h1>
-        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white text-center">
+        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white text-center relative z-10">
           Stock Market Trading
         </h2>
-        <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center">
+        <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center relative z-10">
           Students Enrolled: {studentCount}
         </h3>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 relative z-10">
           <button className="bg-blue-500 text-white py-2 px-4 rounded">
             Nifty: {niftyValue ? niftyValue : '-'}
           </button>
@@ -97,7 +97,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 relative z-10">
         <div className="cards-container flex flex-wrap justify-center gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
             <CourseCard
@@ -121,7 +121,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center p-4 bg-white">
+      <div className="flex flex-col items-center p-4 bg-white relative z-10">
         <div className="text-center max-w-md w-full p-5 m-4">
           <h5 className="mb-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
             Why <br /> Learn with Us?
@@ -150,7 +150,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 relative z-10">
         <Courses />
       </div>
       <Footer />

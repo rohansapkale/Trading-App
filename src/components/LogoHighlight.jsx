@@ -8,7 +8,7 @@ const LogoHighlight = () => {
       <div className="relative w-24 h-24 bg-white  rounded-full border-4 border-white shadow-lg overflow-hidden animate-floating">
         <img
           src={logoImage}
-          style={{top:"-30%",left:"10%"}}
+          style={{top:"-40%",left:"10%"}}
           alt="Logo"
           className="absolute inset-0  w-32 h-[22vh] object-cover transform transition-transform duration-300 hover:animate-revolve"
         />
