@@ -1,17 +1,39 @@
 /* Testimonial.css */
 
+/* Common styles */
 .animate-marquee {
-    display: flex;
-    flex-wrap: nowrap;
-    animation: marquee 22s linear infinite;
+  display: flex;
+  flex-wrap: nowrap;
+  animation: marquee 22s linear infinite; /* Default speed */
+}
+
+/* Base animation keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
-  
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
   }
-  
+}
+
+/* Faster marquee for tablets */
+@media (max-width: 1024px) {
+  .animate-marquee {
+    animation: marquee 16s linear infinite; /* Increased speed for tablets */
+  }
+}
+
+/* Even faster marquee for mobile screens */
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation: marquee 12s linear infinite; /* Increased speed for mobile screens */
+  }
+}
+
+/* Fastest marquee for very small screens */
+@media (max-width: 480px) {
+  .animate-marquee {
+    animation: marquee 8s linear infinite; /* Fastest speed for very small screens */
+  }
+}
