@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import LearnCard from '../components/LearnCard'
 import StudentGrowthChart from '../components/StudentGrowthChart';
 import Testimonial from '../components/Testimonial';
-import LocomotiveScroll from '../components/LocomotiveScroll';
 import './About.css'
 const About = () => {
   const headingRef = useRef(null);

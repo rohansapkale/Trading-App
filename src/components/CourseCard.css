@@ -1,11 +1,8 @@
-/* CourseCard.css */
-
 /* Button hover effect */
 button:hover span:first-child {
-    transform: translateY(0);
-  }
-  
-  button:hover span:last-child {
-    color: white;
-  }
-  
+  transform: translateY(0);
+}
+
+button:hover span:last-child {
+  color: white;
+}

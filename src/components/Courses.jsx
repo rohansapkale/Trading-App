@@ -44,7 +44,7 @@ const CourseCard = ({ title, description, time, note, duration, fee, index }) =>
       initial={{ opacity: 0, x: direction }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-1/2 mx-auto"
+      className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-full"
     >
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-700 mb-2">{description}</p>
@@ -61,7 +61,7 @@ const Courses = () => {
     <div className="bg-gray-100 py-10">
       <div className="container mx-auto">
         <h2 className="text-3xl text-center font-bold mb-8">Our Courses</h2>
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {courses.map((course, index) => (
             <CourseCard key={index} {...course} index={index} />
           ))}

@@ -3,46 +3,70 @@ import './Testimonial.css'; // Import the CSS file for animation
 
 const testimonials = [
   {
-    text: "Amazing!!! I was skeptical, I find the concept innovative. We earn cashback just by making our purchases without doing anything more ...",
-    name: "Logan",
-    logo: "google-play",
+    text: "I have learn lots of things about stocks, basics, fundamentals, technicals, funture, options and many more it can changed my view & knowledge in such away that now i can understand when to trade what to trade & most importantly how to trade. it was lovely knowledge sharing class. thank u very much to our siddhant sir. thank u to THE EASYTRADERS family thank u.",
+    name: "Hiten Mahajan",
+    logo: "gmail",
     stars: 5,
   },
   {
-    text: "This application is really great and allows us to win cash back on our daily purchases",
-    name: "Stutzi",
-    logo: "google-play",
+    text: "Great institute with impactful learning experience. From beginners to expertise, everything is being taught. I would recommend it for a great experience in learning Very good the easy trader's stock market institute Siddharth sir👍",
+    name: "Jayraj Pawar",
+    logo: "gmail",
     stars: 5,
   },
   {
-    text: "Top app that is useful and easy to use it's cool to earn cash back to treat yourself 😉 👍 💪",
-    name: "Elijah",
+    text: "Siddhant sir's Concepts are explained with realt cahrt examples and that gives lot og clarity,that is best reason for I'm interested in studying of trading with siddhant sir...",
+    name: "Pranav Patil",
     logo: "facebook",
     stars: 5,
   },
   {
-    text: "Very functional app without ads, very secure 🔐.",
-    name: "Elijah",
+    text: "Explanations given by siddhant bhaiya in bits and pieces (each concept sub divided into small topics) of entire course of stock market is extremely useful as far as learning is concerned. Each topic is covered in a lucid and understanding manner for new learners. Feel, the course has value for the money.",
+    name: "Jayesh",
     logo: "facebook",
     stars: 5,
   },
   // Add more testimonials here
   {
-    text: "I love how easy it is to earn rewards. The interface is user-friendly!",
-    name: "Sophia",
-    logo: "google-play",
+    text: "Explanations given by SIDDHANT SIR in bits and pieces (each concept sub divided into small topics) of entire course of stock market is extremely useful as far as learning is concerned. Each topic is covered in a lucid and understanding manner for new learners.Feel, the course has value for the money One of best stock market institute in Jalgaon,Best thing is about this institute No Prediction Only Confirmation THANKS @sidd_ahire_195",
+    name: "Ayush Harshal Sheth",
+    logo: "gmail",
     stars: 4,
   },
   {
-    text: "Great app for saving money on everyday purchases. Highly recommend!",
-    name: "Jackson",
+    text: "The Easy Traders institute provides straightforward and practical education in trading and financial markets. It's designed for both beginners and experienced traders, offering clear lessons in technical analysis, risk management, and market psychology with hands-on learning and personalized coaching ✔",
+    name: "Pradnya 05",
     logo: "facebook",
     stars: 5,
   },
   {
-    text: "The cashback system is amazing and makes shopping even more enjoyable.",
-    name: "Mia",
-    logo: "google-play",
+    text: "Best institute Of Stock Market,Chart Patterns❌ 100% Confirmation ✅",
+    name: "Rohit Bhadane",
+    logo: "gmail",
+    stars: 5,
+  },
+  {
+    text: "One of best stock market institute in Jalgaon,Best thing is about this institute No Prediction Only Confirmation 📈",
+    name: "Nachiket Sonawane",
+    logo: "gmail",
+    stars: 5,
+  },
+  {
+    text: "The teaching is too good. One by one guidance. All new concepts and rules. This makes stock market easy.",
+    name: "Priyanka Sheth",
+    logo: "gmail",
+    stars: 5,
+  },
+  {
+    text: "No chart pattern 🚫 no candlestick ❌ Only all new teaching pattern of database",
+    name: "AYUSH SHETH",
+    logo: "gmail",
+    stars: 5,
+  },
+  {
+    text: "No prediction only conformation",
+    name: "Jatin Sonar",
+    logo: "gmail",
     stars: 5,
   },
 ];
@@ -59,8 +83,7 @@ const Testimonial = () => (
       {testimonials.concat(testimonials).map((testimonial, index) => (
         <div key={index} className="flex-shrink-0 w-80 m-4 bg-white p-6 rounded-lg shadow-md ">
           <article>
-            <p className="text-gray-700 mb-4">{testimonial.text}</p>
-            <footer className="flex items-center justify-between">
+          <footer className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="flex-shrink-0">
                   {testimonial.logo === "google-play" ? (
@@ -99,6 +122,8 @@ const Testimonial = () => (
                 ))}
               </ul>
             </footer>
+            <p className="text-gray-700 mb-4">{testimonial.text}</p>
+           
           </article>
         </div>
       ))}

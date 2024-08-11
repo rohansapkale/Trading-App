@@ -134,7 +134,7 @@ const StudentGrowthChart = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-3 text-zinc-800 p-8 aspect-w-16 aspect-h-9 shadow-lg rounded-lg bg-white">
+    <div className="w-full max-w-3xl mx-auto mt-3 text-zinc-800 p-4 md:p-8 aspect-w-16 aspect-h-9 shadow-lg rounded-lg bg-white">
       <Line data={data} options={options} />
     </div>
   );
