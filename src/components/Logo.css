@@ -2,22 +2,56 @@
 
 /* Floating effect */
 @keyframes floating {
-  0% {
-    transform: translateY(-5px);
+    0% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
   }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-}
+  
 
-/* Apply the animations */
-.animate-floating {
-  animation: floating 3s ease-in-out infinite;
-}
-
-.hover\:animate-revolve:hover {
-  animation: revolve 1s linear infinite;
-}
+  /* Apply the animations */
+  .animate-floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+ 
+  
+  /* Responsive adjustments for LogoImg */
+  @media (min-width: 640px) { /* sm */
+    #LogoImg {
+      top: -50%;
+      width: 6rem; /* Adjust for small screens */
+      height: 6rem;
+    }
+  }
+  
+  @media (min-width: 768px) { /* md */
+    #LogoImg {
+      top: -40%;
+      width: 8rem; /* Adjust for medium screens */
+      height: 8rem;
+    }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    #LogoImg {
+      top: -30%;
+      width: 10rem; /* Adjust for large screens */
+      height: 10rem;
+    }
+  }
+  
+  @media (min-width: 1280px) { /* xl */
+    #LogoImg {
+      top: -20%;
+      width: 15rem; /* Adjust for extra-large screens */
+      height: 8rem;
+      left: 5%;
+    }
+  }
+  
