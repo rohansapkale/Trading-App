@@ -74,8 +74,8 @@ export default function NavbarSimple() {
   }, []);
 
   return (
-    <Navbar className="fixed top-0 left-0 w-full bg-opacity-[50vh] text-white px-6 py-3 z-50 border-b-0 shadow-none lg:bg-black lg:bg-opacity-60">
-      <div className="flex items-center justify-between relative">
+    <Navbar className="fixed top-0 left-0 w-full bg-black bg-opacity-60 text-white px-6 py-3 z-50 border-none shadow-none">
+      <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img src={logoImage} alt="Logo" className="h-10 w-auto" /> {/* Adjust logo size */}
         </div>
