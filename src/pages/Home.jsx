@@ -2,20 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import axios from 'axios';
 import Footer from '../components/Footer';
-import CourseCard from '../components/CourseCard';
-import LearnCard from '../components/LearnCard';
 import Courses from '../components/Courses';
-import './Home.css';
+import LearnCard from '../components/LearnCard';
 import StudentGrowthChart from '../components/StudentGrowthChart';
 import Testimonial from '../components/Testimonial';
+import './Home.css';
 
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
-  const [studentCount, setStudentCount] = useState(800);
-  const [niftyValue, setNiftyValue] = useState(null);
-  const [sensexValue, setSensexValue] = useState(null);
-
+  const [studentCount, setStudentCount] = useState(0);
   useEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo(
@@ -25,7 +21,7 @@ const Home = () => {
         y: 0,
         opacity: 1,
         duration: 1.5,
-        ease: 'power3.out'
+        ease: 'power3.out',
       }
     ).fromTo(
       subheadingRef.current,
@@ -34,7 +30,7 @@ const Home = () => {
         y: 0,
         opacity: 1,
         duration: 1.5,
-        ease: 'power3.out'
+        ease: 'power3.out',
       },
       '<.8'
     );
@@ -42,17 +38,28 @@ const Home = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setStudentCount(prevCount => prevCount + 1);
-    }, 5000);
-
+      setStudentCount((prevCount) => {
+        if (prevCount < 800) {
+          return prevCount + 1;
+        } else {
+          clearInterval(interval);
+          return prevCount;
+        }
+      });
+    }, .1); 
+  
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     const fetchMarketData = async () => {
       try {
-        const responseNifty = await axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NSE:NIFTY&interval=1min&apikey=YOUR_API_KEY`);
-        const responseSensex = await axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=BSE:SENSEX&interval=1min&apikey=YOUR_API_KEY`);
+        const responseNifty = await axios.get(
+          `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NSE:NIFTY&interval=1min&apikey=YOUR_API_KEY`
+        );
+        const responseSensex = await axios.get(
+          `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=BSE:SENSEX&interval=1min&apikey=YOUR_API_KEY`
+        );
 
         const niftyData = responseNifty.data['Time Series (1min)'];
         const sensexData = responseSensex.data['Time Series (1min)'];
@@ -63,7 +70,7 @@ const Home = () => {
         setNiftyValue(latestNifty);
         setSensexValue(latestSensex);
       } catch (error) {
-        console.error("Error fetching market data:", error);
+        console.error('Error fetching market data:', error);
       }
     };
 
@@ -71,7 +78,7 @@ const Home = () => {
 
     const interval = setInterval(() => {
       fetchMarketData();
-    }, 5 * 60 * 1000);
+    }, 1 * 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -79,10 +86,16 @@ const Home = () => {
   return (
     <div data-scroll-section>
       <div className="relative h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat z-0">
-        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-white text-center relative z-10">
+        <h1
+          ref={headingRef}
+          className="text-3xl md:text-4xl lg:text-5xl text-white text-center relative z-10"
+        >
           Top Rated Institute For
         </h1>
-        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white text-center relative z-10">
+        <h2
+          ref={subheadingRef}
+          className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white text-center relative z-10"
+        >
           Stock Market Trading
         </h2>
         <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center relative z-10">
@@ -90,11 +103,15 @@ const Home = () => {
         </h3>
       </div>
 
-      <div id="OurCourse" className="p-4 relative z-10">
+      {/* Adjusted position of Courses section */}
+      <div
+        id="OurCourse"
+        className="p-4 relative -top-[25vh] md:-top-[30vh] lg:-top-[30vh] z-20"
+      >
         <Courses />
       </div>
 
-      <div className="flex flex-col items-center p-4 bg-white  relative z-10">
+      <div className="flex flex-col items-center p-4 bg-white relative  -top-[15vh]  z-10">
         <div className="text-center max-w-md w-full p-5 m-4">
           <h5 className="mb-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
             Why <br /> Learn with Us?
@@ -123,12 +140,16 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='mt-10 md:mt-13'>
-        <h3 className='text-2xl md:text-3xl text-center font-semibold mb-2'>Student Growth</h3>
+      {/* Student Growth Chart Section */}
+      <div className="mt-10 md:mt-13">
+        <h3 className="text-2xl md:text-3xl text-center font-semibold mb-2">
+          Student Growth
+        </h3>
         <StudentGrowthChart />
       </div>
 
-      <div className='mt-10 md:mt-16'>
+      {/* Testimonial Section */}
+      <div className="mt-10 md:mt-16">
         <Testimonial />
       </div>
 
