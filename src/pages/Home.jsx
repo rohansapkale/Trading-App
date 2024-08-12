@@ -11,6 +11,8 @@ import './Home.css';
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
+  const countRef = useRef(null);
+  const staticCountRef = useRef(null);
   const [studentCount, setStudentCount] = useState(0);
 
   useEffect(() => {
@@ -34,6 +36,26 @@ const Home = () => {
         ease: 'power3.out',
       },
       '<.8'
+    ).fromTo(
+      countRef.current,
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        ease: 'power3.out',
+      },
+      '<.8'
+    ).fromTo(
+      staticCountRef.current,
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        ease: 'power3.out',
+      },
+      '<.8'
     );
   }, []);
 
@@ -41,14 +63,14 @@ const Home = () => {
     const interval = setInterval(() => {
       setStudentCount((prevCount) => {
         if (prevCount < 800) {
-          return prevCount + 1;
+          return prevCount + 5; // Adjust increment for faster count
         } else {
           clearInterval(interval);
           return prevCount;
         }
       });
-    }, .1); 
-  
+    }, 50); // Faster interval for quicker animation
+
     return () => clearInterval(interval);
   }, []);
 
@@ -89,34 +111,44 @@ const Home = () => {
       <div className="relative h-screen w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat z-0">
         <h1
           ref={headingRef}
-          className="text-3xl md:text-4xl lg:text-5xl text-white text-center relative z-10"
+          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white text-center relative z-10"
         >
           Top Rated Institute For
         </h1>
         <h2
           ref={subheadingRef}
-          className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white text-center relative z-10"
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-4 md:mt-6 lg:mt-8 xl:mt-10 text-white text-center relative z-10"
         >
           Stock Market Trading
         </h2>
-        <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center relative z-10">
-          Students Enrolled: {studentCount}
-        </h3>
+        
+        <div className="flex flex-col md:flex-row gap-4 mt-8">
+          <div className="bg-gradient-to-r from-orange-500 to-blue-500  text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
+              Students Enrolled: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{studentCount}+</span>
+            </h3>
+          </div>
+          <div className="bg-gradient-to-r from-orange-500 to-blue-500   text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
+              Live Classes: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">240+</span>
+            </h3>
+          </div>
+        </div>
       </div>
 
       <div
         id="OurCourse"
-        className="p-4 relative z-1 -top-[25vh] md:-top-[30vh] lg:-top-[30vh]"
+        className="p-4 relative z-1 -top-[18vh] md:-top-[30vh] lg:-top-[30vh]"
       >
         <Courses />
       </div>
 
       <div className="flex flex-col items-center p-4 bg-white relative -top-[15vh] z-10">
         <div className="text-center max-w-md w-full p-5 m-4">
-          <h5 className="mb-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+          <h5 className="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
             Why <br /> Learn with Us?
           </h5>
-          <p className="mb-3 font-normal text-gray-700">
+          <p className="mb-3 text-sm md:text-base lg:text-lg font-normal text-gray-700">
             These are few reasons Why We Stand Out !!!
           </p>
         </div>
