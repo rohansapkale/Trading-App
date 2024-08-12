@@ -14,6 +14,7 @@ const Home = () => {
   const countRef = useRef(null);
   const staticCountRef = useRef(null);
   const [studentCount, setStudentCount] = useState(0);
+  const [liveClasses, setLiveClasses] = useState(0);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -75,6 +76,21 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    const countInterval = setInterval(() => {
+      setLiveClasses((prevCount) => {
+        if (prevCount < 240) {
+          return prevCount + 1; // Adjust increment for smoother animation
+        } else {
+          clearInterval(countInterval);
+          return prevCount;
+        }
+      });
+    }, 20); // Adjust interval for smooth counting
+
+    return () => clearInterval(countInterval);
+  }, []);
+
+  useEffect(() => {
     const fetchMarketData = async () => {
       try {
         const responseNifty = await axios.get(
@@ -123,14 +139,14 @@ const Home = () => {
         </h2>
         
         <div className="flex flex-col md:flex-row gap-4 mt-8">
-          <div className="bg-gradient-to-r from-orange-500 to-blue-500  text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+          <div className=" text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
               Students Enrolled: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{studentCount}+</span>
             </h3>
           </div>
-          <div className="bg-gradient-to-r from-orange-500 to-blue-500   text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+          <div className=" text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
-              Live Classes: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">240+</span>
+              Live Classes: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{liveClasses}+</span>
             </h3>
           </div>
         </div>
