@@ -86,7 +86,7 @@ const Navbar = () => {
         <ul>
           <li><Link data-text="1" to="/" onClick={handleLinkClick}>Home</Link></li>
           <li><Link data-text="2" to="/about" onClick={handleLinkClick}>About</Link></li>
-          <li><Link data-text="3" to="/mentor" onClick={handleLinkClick}>Mentor</Link></li>
+          {/* <li><Link data-text="3" to="/mentor" onClick={handleLinkClick}>Mentor</Link></li> */}
         </ul>
       </div>
       <div id="bg-circle" ref={circleRef}></div>

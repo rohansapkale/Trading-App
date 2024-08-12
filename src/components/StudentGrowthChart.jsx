@@ -21,10 +21,6 @@ const StudentGrowthChart = () => {
         pointBorderWidth: 2,
         pointRadius: 6,
         pointHoverRadius: 8,
-        shadowOffsetX: 3,
-        shadowOffsetY: 3,
-        shadowBlur: 10,
-        shadowColor: 'rgba(0, 0, 0, 0.5)',
       },
       {
         label: 'Our Students',
@@ -38,16 +34,13 @@ const StudentGrowthChart = () => {
         pointBorderWidth: 2,
         pointRadius: 6,
         pointHoverRadius: 8,
-        shadowOffsetX: 3,
-        shadowOffsetY: 3,
-        shadowBlur: 10,
-        shadowColor: 'rgba(0, 0, 0, 0.5)',
       },
     ],
   };
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Ensures the chart uses the available space
     interaction: {
       mode: 'index',
       intersect: false,
@@ -134,7 +127,7 @@ const StudentGrowthChart = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-3 text-zinc-800 p-4 md:p-8 aspect-w-16 aspect-h-9 shadow-lg rounded-lg bg-white">
+    <div className="w-full max-w-3xl mx-auto mt-3 text-zinc-800 p-4 md:p-8 h-[50vh] md:h-[70vh] shadow-lg rounded-lg bg-white">
       <Line data={data} options={options} />
     </div>
   );

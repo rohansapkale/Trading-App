@@ -3,8 +3,7 @@ import { gsap } from 'gsap';
 import Location from '../components/Location';
 import Footer from '../components/Footer';
 import LearnCard from '../components/LearnCard'
-import StudentGrowthChart from '../components/StudentGrowthChart';
-import Testimonial from '../components/Testimonial';
+import liveEducationImage from '../assets/live_education.jpg';
 import './About.css'
 const About = () => {
   const headingRef = useRef(null);
@@ -73,13 +72,45 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className='mt-10 md:mt-13'>
-        <h3 className='text-2xl md:text-3xl text-center font-semibold mb-2'>Student Growth</h3>
-        <StudentGrowthChart />
+      <div className="h-full w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat py-12">
+  <h1 className="text-3xl font-bold mb-8 text-center text-gray-900">Our Mentors</h1>
+  <div className="flex flex-col lg:flex-row gap-8 mx-auto px-4">
+    <div className="mentor-section bg-white p-4 flex flex-col items-center rounded-lg shadow-lg max-w-md w-full">
+      <div className="mentor-image w-full flex justify-center mb-4">
+        <img
+          src={liveEducationImage}
+          alt="Mentor"
+          className="rounded-full shadow-lg w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56 object-cover"
+        />
       </div>
-      <div className='mt-10 md:mt-16'>
-        <Testimonial />
+      <div className="mentor-info text-gray-900 w-full text-center">
+        <h2 className="text-xl sm:text-2xl font-bold mb-2">SIDDHANT AHIRE</h2>
+        <h3 className="text-md sm:text-lg mb-4">Trainer & Trader</h3>
+        <p className="mb-4 text-sm sm:text-base">
+          With 5 years of experience in teaching, mentored more than 800+ students and provided an excellent path to financial freedom through developed market structures.
+        </p>
       </div>
+    </div>
+
+    <div className="mentor-section bg-white p-4 flex flex-col items-center rounded-lg shadow-lg max-w-md w-full">
+      <div className="mentor-image w-full flex justify-center mb-4">
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Mentor"
+          className="rounded-full shadow-lg w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56 object-cover"
+        />
+      </div>
+      <div className="mentor-info text-gray-900 w-full text-center">
+        <h2 className="text-xl sm:text-2xl font-bold mb-2">SAHIL KUMAR</h2>
+        <h3 className="text-md sm:text-lg mb-4">Economist, Full-Time Trader & Investor</h3>
+        <p className="mb-4 text-sm sm:text-base">
+          With 8 years of experience in the market and a master's in economics, I have developed solutions for financial difficulties. Now, I share this experience to help you excel.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
       <Location />
       <Footer />
     </div>

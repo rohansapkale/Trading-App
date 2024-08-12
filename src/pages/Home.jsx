@@ -4,10 +4,10 @@ import axios from 'axios';
 import Footer from '../components/Footer';
 import CourseCard from '../components/CourseCard';
 import LearnCard from '../components/LearnCard';
-import personalTrainingImage from '../assets/personal_training.jpg';
-import liveEducationImage from '../assets/live_education.jpg';
 import Courses from '../components/Courses';
-import './Home.css'; // Ensure this file includes any additional styles needed
+import './Home.css';
+import StudentGrowthChart from '../components/StudentGrowthChart';
+import Testimonial from '../components/Testimonial';
 
 const Home = () => {
   const headingRef = useRef(null);
@@ -88,40 +88,13 @@ const Home = () => {
         <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 text-white text-center relative z-10">
           Students Enrolled: {studentCount}
         </h3>
-        {/* <div className="mt-8 flex flex-col sm:flex-row gap-4 relative z-10">
-          <button className="bg-blue-500 text-white py-2 px-4 rounded">
-            Nifty: {niftyValue ? niftyValue : '-'}
-          </button>
-          <button className="bg-green-500 text-white py-2 px-4 rounded">
-            Sensex: {sensexValue ? sensexValue : '-'}
-          </button>
-        </div> */}
       </div>
-      <div className="p-4 relative z-10">
-        <div className="cards-container flex flex-wrap justify-center gap-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
-            <CourseCard
-              title="Beginner to Advance Equity Course"
-              description="Learn the Market from scratch to expert in Equity Segment"
-              imageUrl="https://d70qr9v5jzijw.cloudfront.net/3_1617199392.jpeg"
-              imageAlt="Beginner to Advance Equity Course"
-            />
-            <CourseCard
-              title="Live Education Market"
-              description="Learn the Easy and Effective way of Options Trading and Equity Trading"
-              imageUrl={liveEducationImage}
-              imageAlt="Live Education Market"
-            />
-            <CourseCard
-              title="Personal Training"
-              description="Learn the Market Depth from Personal Training in both Live and Offline Market and be the Expert"
-              imageUrl={personalTrainingImage}
-              imageAlt="Personal Training"
-            />
-          </div>
-        </div>
+
+      <div id="OurCourse" className="p-4 relative z-10">
+        <Courses />
       </div>
-      <div className="flex flex-col items-center p-4 bg-white relative z-10">
+
+      <div className="flex flex-col items-center p-4 bg-white  relative z-10">
         <div className="text-center max-w-md w-full p-5 m-4">
           <h5 className="mb-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
             Why <br /> Learn with Us?
@@ -150,9 +123,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-4 relative z-10">
-        <Courses />
+      <div className='mt-10 md:mt-13'>
+        <h3 className='text-2xl md:text-3xl text-center font-semibold mb-2'>Student Growth</h3>
+        <StudentGrowthChart />
       </div>
+
+      <div className='mt-10 md:mt-16'>
+        <Testimonial />
+      </div>
+
       <Footer />
     </div>
   );
