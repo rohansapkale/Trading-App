@@ -45,7 +45,7 @@ const CourseCard = ({ title, description, time, note, duration, fee, index }) =>
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}
       whileHover={{ scale: 1.05, boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.2)' }}
-      className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-full transform transition-transform duration-300 hover:bg-gradient-to-r from-orange-400 to-blue-500 hover:text-white"
+      className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-full transform transition-transform duration-300 z-5 hover:bg-gradient-to-r from-orange-400 to-blue-500 hover:text-white"
     >
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-700 mb-2">{description}</p>

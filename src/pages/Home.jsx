@@ -12,6 +12,7 @@ const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
   const [studentCount, setStudentCount] = useState(0);
+
   useEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo(
@@ -103,15 +104,14 @@ const Home = () => {
         </h3>
       </div>
 
-      {/* Adjusted position of Courses section */}
       <div
         id="OurCourse"
-        className="p-4 relative -top-[25vh] md:-top-[30vh] lg:-top-[30vh] z-20"
+        className="p-4 relative z-1 -top-[25vh] md:-top-[30vh] lg:-top-[30vh]"
       >
         <Courses />
       </div>
 
-      <div className="flex flex-col items-center p-4 bg-white relative  -top-[15vh]  z-10">
+      <div className="flex flex-col items-center p-4 bg-white relative -top-[15vh] z-10">
         <div className="text-center max-w-md w-full p-5 m-4">
           <h5 className="mb-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
             Why <br /> Learn with Us?
@@ -140,7 +140,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Student Growth Chart Section */}
       <div className="mt-10 md:mt-13">
         <h3 className="text-2xl md:text-3xl text-center font-semibold mb-2">
           Student Growth
@@ -148,7 +147,6 @@ const Home = () => {
         <StudentGrowthChart />
       </div>
 
-      {/* Testimonial Section */}
       <div className="mt-10 md:mt-16">
         <Testimonial />
       </div>
