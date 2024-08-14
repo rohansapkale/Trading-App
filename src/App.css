@@ -6,8 +6,12 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Ensure no overflow from body */
+      font-family: 'Ubuntu'
   }
-  
+  h1, h2, h3 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
   #main-container {
     overflow: hidden;
   }

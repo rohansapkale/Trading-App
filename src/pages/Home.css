@@ -3,7 +3,7 @@
 /* Custom utility class for background image */
 .bg-hero {
   position: relative;
-  background-image: url('../assets/IMG-20240724-WA0022.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -3,31 +3,33 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const courses = [
-  {
-    title: "Live Market Education",
-    description: "Learn the Easy and Effective way of Options Trading and Equity Trading. Daily Practical class in Live Market",
-    time: "09:00 am to 03:30 pm",
-    note: "Time barrier is not an Excuse. Either you are a student, a job person, a business person, or a professional, you can do 'Live Market Education'. You can find the Key for Financial Difficulties within 2 months, if you give just an hour between 09:00 am to 03:30 pm.",
-    fee: "1500/- per month"
-  },
-  {
-    title: "Personal Training",
-    description: "Learn the Market Depth from Personal Training in both Live and Offline Market and become an Expert.",
-    duration: "3 months + Life Time Doubt Sessions + Life Time Group Discussion Session",
-    fee: "15999/- one time"
-  },
+ 
   {
     title: "Beginner to Advance Equity Course",
     description: "Learn the Market from scratch to expert in the Equity Segment.",
     duration: "45 Days + Life Time Group Discussion Session",
-    fee: "3999/-"
+    fee: "3499/-"
   },
+  
   {
     title: "Beginner to Advance Options Course",
     description: "Learn the Market from scratch to expert in the Options Segment.",
     duration: "6 months + Life Time Group Discussion Sessions",
     fee: "8499/-"
-  }
+  },
+  {
+    title: "Live Market Education",
+    description: "Learn the Easy and Effective way of Options Trading and Equity Trading. Daily Practical class in Live Market",
+    time: "09:00 am to 03:30 pm",
+    note: "Time barrier is not an Excuse. Either you are a student, a job person, a business person, or a professional, you can do 'Live Market Education'. You can find the Key for Financial Difficulties within 2 months, if you give just an hour between 09:00 am to 03:30 pm.",
+    fee: "1499/- per month"
+  },
+  {
+    title: "Personal Training",
+    description: "Learn the Market Depth from Personal Training in both Live and Offline Market and become an Expert.",
+    duration: "3 months + Life Time Doubt Sessions + Life Time Group Discussion Session",
+    fee: "17499/- one time"
+  },
 ];
 
 const CourseCard = ({ title, description, time, note, duration, fee, index }) => {

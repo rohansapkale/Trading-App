@@ -16,6 +16,24 @@
     transform: translateX(-100%);
   }
 }
+/* Testimonial.css */
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 /* Faster marquee for tablets */
 @media (max-width: 1024px) {

@@ -49,10 +49,10 @@ const About = () => {
   return (
     <div data-scroll-section>
       <div className="h-screen bg-gray-100 w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat relative">
-        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-center text-white">
+        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-center ">
           The 
         </h1>
-        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 text-white">
+        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 ">
          Easy Trading
         </h2>
       </div>
