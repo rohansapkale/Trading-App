@@ -4,8 +4,10 @@ import Location from '../components/Location';
 import Footer from '../components/Footer';
 import LearnCard from '../components/LearnCard'
 import liveEducationImage from '../assets/live_education.jpg';
-import './About.css'
-import VideoSection from '../components/VideoSection'
+import './About.css';
+import TradingPortfolio from '../components/TradingPortfolio';
+import VideoSection from '../components/VideoSection';
+import MouseFollower from '../components/MouseFollower';
 const About = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -49,6 +51,7 @@ const About = () => {
 
   return (
     <div data-scroll-section>
+      <MouseFollower/>
       <VideoSection/>
       <div className="relative z-5  translate-y-[-100px] md:translate-[120px] p-4">
         <div ref={cardsRef} className="flex justify-center">
@@ -65,6 +68,9 @@ const About = () => {
             />
           </div>
         </div>
+      </div>
+      <div>
+        <TradingPortfolio />
       </div>
       <div className="h-full w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat py-12">
   <h1 className="text-3xl font-bold mb-8 text-center text-gray-900">Our Mentors</h1>

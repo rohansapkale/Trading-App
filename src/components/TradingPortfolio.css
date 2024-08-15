@@ -1,0 +1,18 @@
+.trading-portfolio-container {
+    /* Ensure container is responsive and handles spacing well */
+    max-width: 100%;
+  }
+  
+  .image-container {
+    /* Remove any extra margins or padding */
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    /* Ensure images fit well within their containers */
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
