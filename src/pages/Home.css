@@ -1,16 +1,11 @@
 /* Home.css */
 
 /* Custom utility class for background image */
+
+/* In your custom CSS file, e.g., Home.css */
 .bg-hero {
   position: relative;
-  background-image: none;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
-  z-index: 1;
+  background: none; /* Remove the existing background */
 }
 
 .cards-container {

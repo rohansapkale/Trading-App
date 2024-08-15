@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import LearnCard from '../components/LearnCard'
 import liveEducationImage from '../assets/live_education.jpg';
 import './About.css'
+import VideoSection from '../components/VideoSection'
 const About = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -48,14 +49,7 @@ const About = () => {
 
   return (
     <div data-scroll-section>
-      <div className="h-screen bg-gray-100 w-full flex flex-col items-center justify-center bg-hero bg-cover bg-center bg-no-repeat relative">
-        <h1 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl text-center ">
-          The 
-        </h1>
-        <h2 ref={subheadingRef} className="text-4xl md:text-5xl lg:text-6xl mt-8 ">
-         Easy Trading
-        </h2>
-      </div>
+      <VideoSection/>
       <div className="relative z-5  translate-y-[-100px] md:translate-[120px] p-4">
         <div ref={cardsRef} className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

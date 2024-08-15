@@ -1,30 +1,138 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
 
 const VideoSection = () => {
+  const headingRef = useRef(null);
+  const subheadingRef = useRef(null);
+  const staticCountRef = useRef(null);
+  const countRef = useRef(null);
+  const [studentCount, setStudentCount] = useState(0);
+  const [liveClasses, setLiveClasses] = useState(0);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.fromTo(
+      headingRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power3.out',
+      }
+    )
+      .fromTo(
+        subheadingRef.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: 'power3.out',
+        },
+        '<0.8'
+      )
+      .fromTo(
+        countRef.current,
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: 'power3.out',
+        },
+        '<0.8'
+      )
+      .fromTo(
+        staticCountRef.current,
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: 'power3.out',
+        },
+        '<0.8'
+      );
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStudentCount((prevCount) => {
+        if (prevCount < 800) {
+          return prevCount + 5;
+        } else {
+          clearInterval(interval);
+          return prevCount;
+        }
+      });
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const countInterval = setInterval(() => {
+      setLiveClasses((prevCount) => {
+        if (prevCount < 240) {
+          return prevCount + 1;
+        } else {
+          clearInterval(countInterval);
+          return prevCount;
+        }
+      });
+    }, 20);
+
+    return () => clearInterval(countInterval);
+  }, []);
+
   return (
-    <div className="videoContainer relative overflow-hidden w-full h-64 sm:h-80 lg:h-[500px]">
-      <div className="videoSizer absolute inset-0">
+    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
         <video
-          className="video w-full h-full object-cover"
+          className="w-full h-full object-cover"
           autoPlay
           loop
+          muted
           playsInline
-          disableremoteplayback
+          poster="https://static.vecteezy.com/system/resources/thumbnails/026/389/111/original/forex-trading-investor-financial-analyst-stock-market-chart-beautiful-3d-animation-graph-timelapse-seamless-looping-3d-futuristic-finance-stock-exchange-market-computer-screen-technology-ai-trading-video.jpg"
         >
           <source
-            src="https://static.tradingview.com/static/bundles/chart-big.hvc1.28edcb3d97450fcb799f.mp4"
-            type="video/mp4;codecs=hvc1.1.0.L150.b0"
+            src="https://static.vecteezy.com/system/resources/previews/026/389/111/mp4/forex-trading-investor-financial-analyst-stock-market-chart-beautiful-3d-animation-graph-timelapse-seamless-looping-3d-futuristic-finance-stock-exchange-market-computer-screen-technology-ai-trading-video.mp4"
+            type="video/mp4"
           />
           <source
-            src="https://static.tradingview.com/static/bundles/chart-big.a7d994603f412a3a4a52.webm"
+            src="https://static.vecteezy.com/system/resources/previews/026/389/111/forex-trading-investor-financial-analyst-stock-market-chart-beautiful-3d-animation-graph-timelapse-seamless-looping-3d-futuristic-finance-stock-exchange-market-computer-screen-technology-ai-trading-video.webm"
             type="video/webm"
-          />
-          <source
-            src="https://static.tradingview.com/static/bundles/chart-big.avc1.f201e709ee463d4a6893.mp4"
-            type="video/mp4;codecs=avc1"
           />
           Your browser does not support the video tag.
         </video>
+        {/* Optional overlay for darkening the video */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+      </div>
+
+      {/* Overlaid Text and Button */}
+      <div className="relative z-10 text-center text-white">
+        <h2
+          ref={subheadingRef}
+          className="text-4xl text-white md:text-5xl lg:text-6xl xl:text-7xl mt-4 md:mt-6 lg:mt-8 xl:mt-10 text-center relative z-10"
+        >
+         The Easy Trading
+        </h2>
+
+        <div className="flex flex-col md:flex-row gap-4 mt-8">
+          <div className="text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
+              Students Enrolled: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{studentCount}+</span>
+            </h3>
+          </div>
+          <div className="text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
+              Live Classes: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{liveClasses}+</span>
+            </h3>
+          </div>
+        </div>
       </div>
     </div>
   );

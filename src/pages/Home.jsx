@@ -7,6 +7,7 @@ import LearnCard from '../components/LearnCard';
 import StudentGrowthChart from '../components/StudentGrowthChart';
 import Testimonial from '../components/Testimonial';
 import MouseFollower from '../components/MouseFollower';
+import VideoSection from '../components/VideoSection'; // Import the VideoSection component
 import './Home.css';
 
 const Home = () => {
@@ -61,36 +62,7 @@ const Home = () => {
     );
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStudentCount((prevCount) => {
-        if (prevCount < 800) {
-          return prevCount + 5; // Adjust increment for faster count
-        } else {
-          clearInterval(interval);
-          return prevCount;
-        }
-      });
-    }, 50); // Faster interval for quicker animation
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const countInterval = setInterval(() => {
-      setLiveClasses((prevCount) => {
-        if (prevCount < 240) {
-          return prevCount + 1; // Adjust increment for smoother animation
-        } else {
-          clearInterval(countInterval);
-          return prevCount;
-        }
-      });
-    }, 20); // Adjust interval for smooth counting
-
-    return () => clearInterval(countInterval);
-  }, []);
-
+ 
   useEffect(() => {
     const fetchMarketData = async () => {
       try {
@@ -125,39 +97,13 @@ const Home = () => {
 
   return (
     <div data-scroll-section>
-      <MouseFollower/>
-      <div className="relative  text-zinc-900 h-screen w-full flex flex-col items-center justify-center bg-hero z-0">
-        <h1
-          ref={headingRef}
-          className="text-3xl text-zinc-900 md:text-4xl lg:text-5xl xl:text-6xl  text-center relative z-10"
-        >
-          Top Rated Institute For
-        </h1>
-        <h2
-          ref={subheadingRef}
-          className="text-4xl text-zinc-900 md:text-5xl lg:text-6xl xl:text-7xl mt-4 md:mt-6 lg:mt-8 xl:mt-10  text-center relative z-10"
-        >
-          Stock Market Trading
-        </h2>
-        
-        <div className="flex flex-col md:flex-row gap-4 mt-8">
-          <div className=" text-zinc-900 text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
-              Students Enrolled: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{studentCount}+</span>
-            </h3>
-          </div>
-          <div className=" text-zinc-900 text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
-              Live Classes: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{liveClasses}+</span>
-            </h3>
-          </div>
-        </div>
+      <MouseFollower />
+      <div className="relative text-zinc-900 h-screen w-full flex flex-col items-center justify-center bg-hero">
+        <VideoSection /> {/* Add the VideoSection component here */}
+      
       </div>
 
-      <div
-        id="OurCourse"
-        className="p-4 relative z-1 -top-[18vh] md:-top-[30vh] lg:-top-[30vh]"
-      >
+      <div id="OurCourse" className="p-4 relative z-1 -top-[18vh] md:-top-[30vh] lg:-top-[30vh]">
         <Courses />
       </div>
 
