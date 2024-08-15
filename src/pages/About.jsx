@@ -72,7 +72,7 @@ const About = () => {
       <div>
         <TradingPortfolio />
       </div>
-      <div className="h-full w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat py-12">
+      {/* <div className="h-full w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat py-12">
   <h1 className="text-3xl font-bold mb-8 text-center text-gray-900">Our Mentors</h1>
   <div className="flex flex-col lg:flex-row gap-8 mx-auto px-4">
     <div className="mentor-section bg-white p-4 flex flex-col items-center rounded-lg shadow-lg max-w-md w-full">
@@ -109,7 +109,7 @@ const About = () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
       <Location />
       <Footer />
