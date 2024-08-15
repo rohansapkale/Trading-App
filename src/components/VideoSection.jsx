@@ -96,14 +96,14 @@ const VideoSection = () => {
           loop
           muted
           playsInline
-          poster="https://static.vecteezy.com/system/resources/thumbnails/026/389/111/original/forex-trading-investor-financial-analyst-stock-market-chart-beautiful-3d-animation-graph-timelapse-seamless-looping-3d-futuristic-finance-stock-exchange-market-computer-screen-technology-ai-trading-video.jpg"
+          poster="https://static.vecteezy.com/system/resources/thumbnails/042/538/438/original/stock-market-price-for-investment-and-digital-trading-animation-free-video.jpg"
         >
           <source
-            src="https://static.vecteezy.com/system/resources/previews/026/389/111/mp4/forex-trading-investor-financial-analyst-stock-market-chart-beautiful-3d-animation-graph-timelapse-seamless-looping-3d-futuristic-finance-stock-exchange-market-computer-screen-technology-ai-trading-video.mp4"
+            src="https://static.vecteezy.com/system/resources/previews/042/538/438/mp4/stock-market-price-for-investment-and-digital-trading-animation-free-video.mp4"
             type="video/mp4"
           />
           <source
-            src="https://static.vecteezy.com/system/resources/previews/026/389/111/forex-trading-investor-financial-analyst-stock-market-chart-beautiful-3d-animation-graph-timelapse-seamless-looping-3d-futuristic-finance-stock-exchange-market-computer-screen-technology-ai-trading-video.webm"
+            src="https://static.vecteezy.com/system/resources/previews/042/538/438/stock-market-price-for-investment-and-digital-trading-animation-free-video.webm"
             type="video/webm"
           />
           Your browser does not support the video tag.
