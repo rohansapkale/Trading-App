@@ -15,4 +15,20 @@ html, body {
   h1, h2, h3 {
     font-family: 'Ubuntu', sans-serif;
 }
- 
+@keyframes rotateY360 {
+    0% {
+      transform: perspective(1000px) rotateY(0);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+  
+  .hover\:rotate-y-360:hover {
+    animation: rotateY360 0.7s ease-in-out forwards;
+  }
+  
+  .hover\:translate-y-2:hover {
+    transform: translateY(-8px);
+  }
+  

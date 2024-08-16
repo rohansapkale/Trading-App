@@ -14,5 +14,12 @@
     display: block;
     max-width: 100%;
     height: auto;
+  }.image-container:hover .overlay-text {
+    transform: translateY(0);
   }
+  
+  .image-container:hover img {
+    filter: blur(4px);
+  }
+  
   

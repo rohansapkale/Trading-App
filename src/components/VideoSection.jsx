@@ -108,8 +108,8 @@ const VideoSection = () => {
           />
           Your browser does not support the video tag.
         </video>
-        {/* Optional overlay for darkening the video */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        {/* Black opacity overlay */}
+        <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
 
       {/* Overlaid Text and Button */}
@@ -118,7 +118,7 @@ const VideoSection = () => {
           ref={subheadingRef}
           className="text-4xl text-white md:text-5xl lg:text-6xl xl:text-7xl mt-4 md:mt-6 lg:mt-8 xl:mt-10 text-center relative z-10"
         >
-         The Easy Trading
+          The Easy Trading
         </h2>
 
         <div className="flex flex-col md:flex-row gap-4 mt-8">
