@@ -3,11 +3,12 @@ import { gsap } from 'gsap';
 import Location from '../components/Location';
 import Footer from '../components/Footer';
 import LearnCard from '../components/LearnCard'
-import liveEducationImage from '../assets/live_education.jpg';
+import StudentGrowthChart from '../components/StudentGrowthChart';
 import './About.css';
 import TradingPortfolio from '../components/TradingPortfolio';
-import VideoSection from '../components/VideoSection';
-import MouseFollower from '../components/MouseFollower';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import VideoSectionAbout from '../components/VideoSectionAbout';
+gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -48,11 +49,39 @@ const About = () => {
       '<.8'
     );
   }, []);
+  const goalRefs = useRef([]);
+  goalRefs.current = [];
 
+  useEffect(() => {
+    goalRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: -300 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 75%',
+            toggleActions: 'play none none none',
+          },
+          delay: index * 0.5, // Delay each item to make them appear one by one
+        }
+      );
+    });
+  }, []);
+
+  const addToRefs = (el) => {
+    if (el && !goalRefs.current.includes(el)) {
+      goalRefs.current.push(el);
+    }
+  };
   return (
     <div data-scroll-section>
-      <MouseFollower/>
-      <VideoSection/>
+
+      <VideoSectionAbout />
       <div className="relative z-5  translate-y-[-100px] md:translate-[120px] p-4">
         <div ref={cardsRef} className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -110,7 +139,26 @@ const About = () => {
     </div>
   </div>
 </div> */}
-
+      <div className="mt-10 md:mt-13">
+        <h3 className="text-2xl md:text-3xl text-center font-semibold mb-2">
+          Student Growth
+        </h3>
+        <StudentGrowthChart />
+      </div>
+      <div className="flex justify-center items-center min-h-screen  py-10">
+      <div className=" p-12 w-full max-w-4xl text-center space-y-12">
+        <h2 className="text-4xl font-bold mb-10">Our Goals</h2>
+        <div ref={addToRefs} className="p-8 bg-gray-50 rounded-lg shadow-lg text-2xl font-medium">
+          1. Comprehensive financial plans tailored to your long-term goals.
+        </div>
+        <div ref={addToRefs} className="p-8 bg-gray-50 rounded-lg shadow-lg text-2xl font-medium">
+          2. Management to grow your investments.
+        </div>
+        <div ref={addToRefs} className="p-8 bg-gray-50 rounded-lg shadow-lg text-2xl font-medium">
+          3. Strategies to ensure a secure and comfortable retirement.
+        </div>
+      </div>
+    </div>
       <Location />
       <Footer />
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function LearnCard({ src, head, desc }) {
   return (
-    <div className="max-w-xs w-full bg-white border border-gray-200 rounded-lg shadow transition-transform duration-500 ease-in-out hover:transform hover:-translate-y-2 hover:rotate-y-360">
+    <div className="max-w-xs w-full bg-white border border-gray-200 rounded-lg shadow transition-transform duration-300 ease-in-out hover:scale-105">
       <a href="#">
         <img
           className="rounded-t-lg w-80 h-48 object-cover p-8"

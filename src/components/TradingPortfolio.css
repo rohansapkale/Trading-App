@@ -22,4 +22,22 @@
     filter: blur(4px);
   }
   
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .trading-portfolio-container .carousel {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+  }
+  
+  .trading-portfolio-container .carousel:hover {
+    animation-play-state: paused;
+  }
   

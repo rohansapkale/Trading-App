@@ -3,11 +3,16 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const courses = [
- 
+  {
+    title: "Basic to Advance Future and Options Master Class",
+    description: "Learn the Market from scratch to expert in the Equity Segment.",
+    duration: "6 Months + 6 Months Live Market Sessions",
+    fee: "3499/-"
+  },
   {
     title: "Beginner to Advance Equity Course",
     description: "Learn the Market from scratch to expert in the Equity Segment.",
-    duration: "45 Days + Life Time Group Discussion Session",
+    duration: "45 Days +  15 days practical/ live market classes",
     fee: "3499/-"
   },
   

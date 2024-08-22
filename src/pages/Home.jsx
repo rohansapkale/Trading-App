@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import axios from 'axios';
 import Footer from '../components/Footer';
 import Courses from '../components/Courses';
 import LearnCard from '../components/LearnCard';
-import StudentGrowthChart from '../components/StudentGrowthChart';
+
 import Testimonial from '../components/Testimonial';
-import MouseFollower from '../components/MouseFollower';
 import VideoSection from '../components/VideoSection'; // Import the VideoSection component
 import './Home.css';
 
@@ -15,8 +14,7 @@ const Home = () => {
   const subheadingRef = useRef(null);
   const countRef = useRef(null);
   const staticCountRef = useRef(null);
-  const [studentCount, setStudentCount] = useState(0);
-  const [liveClasses, setLiveClasses] = useState(0);
+
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -62,7 +60,7 @@ const Home = () => {
     );
   }, []);
 
- 
+
   useEffect(() => {
     const fetchMarketData = async () => {
       try {
@@ -97,11 +95,9 @@ const Home = () => {
 
   return (
     <div data-scroll-section>
-      <MouseFollower />
-      <div className="relative text-zinc-900 h-screen w-full flex flex-col items-center justify-center bg-hero">
-        <VideoSection /> {/* Add the VideoSection component here */}
-      
-      </div>
+
+      <VideoSection /> {/* Add the VideoSection component here */}
+
 
       <div id="OurCourse" className="p-4 relative z-1 -top-[18vh] md:-top-[30vh] lg:-top-[30vh]">
         <Courses />
@@ -136,12 +132,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-10 md:mt-13">
-        <h3 className="text-2xl md:text-3xl text-center font-semibold mb-2">
-          Student Growth
-        </h3>
-        <StudentGrowthChart />
-      </div>
+
 
       <div className="mt-10 md:mt-16">
         <Testimonial />

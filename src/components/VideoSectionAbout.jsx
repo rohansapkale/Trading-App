@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
-const VideoSection = () => {
+const VideoSectionAbout = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
   const staticCountRef = useRef(null);
@@ -118,24 +118,11 @@ const VideoSection = () => {
           ref={subheadingRef}
           className="text-4xl text-white md:text-5xl lg:text-6xl xl:text-7xl mt-4 md:mt-6 lg:mt-8 xl:mt-10 text-center relative z-10"
         >
-          The Easy Traders
+         About Us
         </h2>
-
-        <div className="flex flex-col md:flex-row gap-4 mt-8">
-          <div className="text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
-              Students Enrolled: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{studentCount}+</span>
-            </h3>
-          </div>
-          <div className="text-white text-center rounded-lg shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 relative z-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
-              Live Classes: <span className="font-extrabold text-2xl md:text-3xl lg:text-4xl">{liveClasses}+</span>
-            </h3>
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
-export default VideoSection;
+export default VideoSectionAbout;
