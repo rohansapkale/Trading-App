@@ -1,22 +1,4 @@
-/* globals.css or your stylesheet */
 
-/* Floating effect */
-@keyframes floating {
-  0% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Apply the animations */
-.animate-floating {
-  animation: floating 3s ease-in-out infinite;
-}
 
 /* Default styles for #LogoImg */
 #LogoImg {
@@ -59,3 +41,20 @@
     height: 140px;
   }
 }
+/* Logo.css */
+
+/* Ensure the logo does not have floating animations */
+#LogoImg {
+  transition: transform 0.3s ease-in-out;
+}
+/* Logo.css */
+
+/* Adjust logo styles as needed */
+#LogoImg {
+  height: 2.5rem; /* Adjust height to fit the navbar */
+  width: auto; /* Maintain aspect ratio */
+}
+
+
+
+
