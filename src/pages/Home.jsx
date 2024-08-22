@@ -97,9 +97,7 @@ const Home = () => {
     <div data-scroll-section>
 
       <VideoSection /> {/* Add the VideoSection component here */}
-
-
-      <div id="OurCourse" className="p-4 relative z-1 -top-[18vh] md:-top-[30vh] lg:-top-[30vh]">
+      <div id="OurCourse" className="p-4 relative z-1 -top-[12vh] md:-top-[30vh] lg:-top-[30vh]">
         <Courses />
       </div>
 
