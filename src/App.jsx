@@ -5,14 +5,13 @@ import Navbar from './components/Navbar'; // Import your Navbar component
 import Home from './pages/Home'; // Import your Home page component
 import About from './pages/About'; // Import your About page component
 import Mentor from './pages/Mentor'; // Import your Contact page component
-import ThemeToggle from './components/ThemeToggle';
-import LogoHighlight from './components/LogoHighlight'
+
 const App = () => {
   return (
     <Router>
       <div id="main-container"  data-scroll-container>
        
-        <LogoHighlight/>
+        {/* <LogoHighlight/> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

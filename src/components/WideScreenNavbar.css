@@ -1,0 +1,22 @@
+/* WideScreenNavbar.css */
+.wide-screen-navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  
+  .wide-screen-navbar li {
+    margin-right: 20px;
+  }
+  
+  .wide-screen-navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .wide-screen-navbar a:hover {
+    color: #f97316; /* Tailwind's orange-500 color */
+  }
+  

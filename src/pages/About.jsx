@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import LearnCard from '../components/LearnCard'
 import StudentGrowthChart from '../components/StudentGrowthChart';
 import './About.css';
-import TradingPortfolio from '../components/TradingPortfolio';
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import VideoSectionAbout from '../components/VideoSectionAbout';
 import gif1 from '../assets/gif1.gif';
@@ -100,9 +100,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div>
-        <TradingPortfolio />
-      </div>
+
       {/* <div className="h-full w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat py-12">
   <h1 className="text-3xl font-bold mb-8 text-center text-gray-900">Our Mentors</h1>
   <div className="flex flex-col lg:flex-row gap-8 mx-auto px-4">

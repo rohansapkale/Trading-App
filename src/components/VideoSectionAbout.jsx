@@ -118,7 +118,7 @@ const VideoSectionAbout = () => {
           ref={subheadingRef}
           className="text-4xl text-white md:text-5xl lg:text-6xl xl:text-7xl mt-4 md:mt-6 lg:mt-8 xl:mt-10 text-center relative z-10"
         >
-         About Us
+      The Easy Traders
         </h2>
       </div>
     </div>

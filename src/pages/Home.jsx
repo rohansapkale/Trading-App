@@ -10,7 +10,7 @@ import gif3 from '../assets/gif3.jpg';
 import Testimonial from '../components/Testimonial';
 import VideoSection from '../components/VideoSection'; // Import the VideoSection component
 import './Home.css';
-
+import TradingPortfolio from '../components/TradingPortfolio';
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -102,7 +102,9 @@ const Home = () => {
       <div id="OurCourse" className="p-4 relative z-1 -top-[12vh] md:-top-[30vh] lg:-top-[30vh]">
         <Courses />
       </div>
-
+      <div>
+        <TradingPortfolio />
+      </div>
       <div className="flex flex-col items-center p-4 bg-white relative -top-[15vh] z-10">
         <div className="text-center max-w-md w-full p-5 m-4">
           <h5 className="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
