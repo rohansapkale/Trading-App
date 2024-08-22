@@ -8,6 +8,8 @@ import './About.css';
 import TradingPortfolio from '../components/TradingPortfolio';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import VideoSectionAbout from '../components/VideoSectionAbout';
+import gif1 from '../assets/gif1.gif';
+import gif2 from '../assets/gif2.gif';
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const headingRef = useRef(null);
@@ -86,12 +88,12 @@ const About = () => {
         <div ref={cardsRef} className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <LearnCard
-              src="https://sithcomputers.com/wp-content/uploads/2023/03/Data-Science.gif"
+              src={gif1}
               desc="Once you are with us, we will be with you. Be a part of our thriving stock market learning private community"
               head="Vision"
             />
             <LearnCard
-              src="https://i.pinimg.com/originals/fc/71/63/fc71635c7f1b09ed30413f59bb749582.gif"
+              src={gif2}
               desc="Our Mission is to provide expert financial education and innovative solutions that empower our students to secure their financial future"
               head="Mission"
             />

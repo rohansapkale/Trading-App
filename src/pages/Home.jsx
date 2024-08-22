@@ -4,7 +4,9 @@ import axios from 'axios';
 import Footer from '../components/Footer';
 import Courses from '../components/Courses';
 import LearnCard from '../components/LearnCard';
-
+import gif1 from '../assets/gif1.gif';
+import gif2 from '../assets/gif2.gif';
+import gif3 from '../assets/gif3.jpg';
 import Testimonial from '../components/Testimonial';
 import VideoSection from '../components/VideoSection'; // Import the VideoSection component
 import './Home.css';
@@ -113,17 +115,17 @@ const Home = () => {
 
         <div className="flex flex-wrap justify-center gap-4 w-full">
           <LearnCard
-            src="https://sithcomputers.com/wp-content/uploads/2023/03/Data-Science.gif"
+            src={gif1}
             desc="Once you are with us, we will be with you. Be a part of our thriving stock market learning private community"
             head="Complete Mentorship"
           />
           <LearnCard
-            src="https://i.pinimg.com/originals/fc/71/63/fc71635c7f1b09ed30413f59bb749582.gif"
+            src={gif2}
             desc="Simple language that even a 10-year-old can understand the full stock market course"
             head="No Jargons & easy to understand"
           />
           <LearnCard
-            src="https://i.pinimg.com/236x/d7/64/c7/d764c70776b64e523cb4eea2f322db96.jpg"
+            src={gif3}
             desc="Powered by a learning execution system for you to implement stock market investment and trading strategies alongside"
             head="Not just learn, IMPLEMENT IT"
           />
