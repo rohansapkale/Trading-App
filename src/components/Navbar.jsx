@@ -49,12 +49,7 @@ const Navbar = () => {
           <li className="md:ml-6 p-4 md:p-0">
             <Link to="/about">About Us</Link>
           </li>
-          <li className="md:ml-6 p-4 md:p-0 text-transparent">
-            <Link to="/">More</Link>
-          </li>
-          <li className="md:ml-6 p-4 md:p-0 text-transparent">
-            <Link to="/">Contact</Link>
-          </li>
+
         </ul>
       </div>
     </nav>
