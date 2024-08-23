@@ -111,7 +111,7 @@ const Home = () => {
             Why <br /> Learn with Us?
           </h5>
           <p className="mb-3 text-sm md:text-base lg:text-lg font-normal text-gray-700">
-            These are few reasons Why We Stand Out !!!
+            We don't teach candlstick patterns,chart patterns or indicators.Instead, we dive into advanced concepts that offer high-conviction strategies,designed to empower your trading journey with precision and confidence.
           </p>
         </div>
 

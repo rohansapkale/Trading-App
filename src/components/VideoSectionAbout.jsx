@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef} from 'react';
 import { gsap } from 'gsap';
-
+import BgAbout from '../assets/bg-about.mp4';
 const VideoSectionAbout = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
   const staticCountRef = useRef(null);
   const countRef = useRef(null);
-  const [studentCount, setStudentCount] = useState(0);
-  const [liveClasses, setLiveClasses] = useState(0);
+
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -96,10 +95,10 @@ const VideoSectionAbout = () => {
           loop
           muted
           playsInline
-          poster="https://static.vecteezy.com/system/resources/thumbnails/042/538/438/original/stock-market-price-for-investment-and-digital-trading-animation-free-video.jpg"
+          src={BgAbout}
         >
           <source
-            src="https://static.vecteezy.com/system/resources/previews/042/538/438/mp4/stock-market-price-for-investment-and-digital-trading-animation-free-video.mp4"
+            src={BgAbout}
             type="video/mp4"
           />
           <source
