@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-
+import BgVideo from '../assets/bg-video.mp4';
 const VideoSection = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -96,10 +96,10 @@ const VideoSection = () => {
           loop
           muted
           playsInline
-          poster="https://static.vecteezy.com/system/resources/thumbnails/042/538/438/original/stock-market-price-for-investment-and-digital-trading-animation-free-video.jpg"
+          src={BgVideo}
         >
           <source
-            src="https://static.vecteezy.com/system/resources/previews/042/538/438/mp4/stock-market-price-for-investment-and-digital-trading-animation-free-video.mp4"
+            src={BgVideo}
             type="video/mp4"
           />
           <source
