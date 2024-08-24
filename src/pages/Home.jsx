@@ -130,7 +130,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col items-center p-4 bg-white relative -top-[15vh] z-10">
         <div ref={textRef} className="text-center max-w-md w-full p-5 m-4">
-      <h5 className="mb-2 text-9xl md:text-3xl lg:text-7xl font-bold tracking-tight text-gray-900">
+      <h5 className="mb-2 text-2xl md:text-3xl lg:text-7xl font-bold tracking-tight text-gray-900">
         Why <br /> Learn with Us?
       </h5>
       <p className="mb-3 text-lg md:text-base lg:text-xl font-normal text-gray-700">
