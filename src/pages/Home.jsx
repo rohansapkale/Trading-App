@@ -11,6 +11,9 @@ import Testimonial from '../components/Testimonial';
 import VideoSection from '../components/VideoSection'; // Import the VideoSection component
 import './Home.css';
 import TradingPortfolio from '../components/TradingPortfolio';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -94,6 +97,26 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, y: 50 }, // Starting with low opacity and below the original position
+      {
+        opacity: 1,
+        y: 0, // Moves to the original position
+        duration: 2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: 'top 80%', // Animation starts when the top of the element is 80% from the top of the viewport
+          end: 'top 20%',   // Animation ends when the top of the element is 20% from the top of the viewport
+          scrub: true,      // Smooth animation as you scroll
+        },
+      }
+    );
+  }, []);
 
   return (
     <div data-scroll-section>
@@ -106,15 +129,14 @@ const Home = () => {
         <TradingPortfolio />
       </div>
       <div className="flex flex-col items-center p-4 bg-white relative -top-[15vh] z-10">
-        <div className="text-center max-w-md w-full p-5 m-4">
-          <h5 className="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
-            Why <br /> Learn with Us?
-          </h5>
-          <p className="mb-3 text-sm md:text-base lg:text-lg font-normal text-gray-700">
-            We don't teach candlstick patterns,chart patterns or indicators.Instead, we dive into advanced concepts that offer high-conviction strategies,designed to empower your trading journey with precision and confidence.
-          </p>
-        </div>
-
+      <div ref={textRef} className="text-center max-w-md w-full p-5 m-4">
+      <h5 className="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+        Why <br /> Learn with Us?
+      </h5>
+      <p className="mb-3 text-sm md:text-base lg:text-lg font-normal text-gray-700">
+        We don't teach candlestick patterns, chart patterns, or indicators. Instead, we dive into advanced concepts that offer high-conviction strategies, designed to empower your trading journey with precision and confidence.
+      </p>
+    </div>
         <div className="flex flex-wrap justify-center gap-4 w-full">
           <LearnCard
             src={gif1}
